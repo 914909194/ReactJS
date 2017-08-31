@@ -1,0 +1,87 @@
+*{
+    margin:0;
+    padding:0;
+}
+html,body,#photowall{
+    width: 100%;
+    height:100%;
+}
+.stage{
+    width: 100%;
+    height: 100%;
+    background: #cccccc;
+    overflow: hidden;
+    position:relative;
+    perspective:1000px;
+}
+.img-figure{
+    width: 320px;
+    height: 360px;
+    background: #ffffff;
+    text-align: center;
+    padding-top:40px;
+    box-sizing: border-box;
+    position: absolute;
+    top:0;
+    left:0;
+    transition:all 0.5s ease;
+    cursor: pointer;
+    transform-style:preserve-3d;
+}
+figcaption h2{
+    color:#999;
+}
+figcaption div{
+    width: 320px;
+    height: 360px;
+    background: #ffffff;
+    line-height:360px;
+    position: absolute;
+    left:0;
+    top:0;
+    transform:rotateY(180deg) translateZ(1px);
+    backface-visibility: hidden;
+}
+.controller{
+    width: 30px;
+    height: 30px;
+    background: #000000;
+    border-radius:50%;
+    float:left;
+    transform:scale(0.7);
+    transition:all 0.5s ease;
+}
+.nav{
+    width: 480px;
+    height: 30px;
+    position: absolute;
+    bottom:30px;
+    left:50%;
+    margin-left:-240px;
+    cursor: pointer;
+}
+.is-center{
+    transform:scale(1);
+    /*background: skyblue;*/
+}
+.is-center::after{
+    content:"\f005";
+    color:#fff;
+    font-size:20px;
+    font-family: 'FontAwesome';
+    display: block;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('./font-awesome-4.7.0/fonts/fontawesome-webfont.eot'); /* IE9+ */
+    src: url('./font-awesome-4.7.0/fonts/fontawesome-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('./font-awesome-4.7.0/fonts/fontawesome-webfont.woff') format('woff'), /* chrome、firefox */
+    url('./font-awesome-4.7.0/fonts/fontawesome-webfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('./font-awesome-4.7.0/fonts/fontawesome-webfont.svg#fontname') format('svg'); /* iOS 4.1- */
+}
+.is-reverse{
+
+    transform:rotateY(180deg);
+}
